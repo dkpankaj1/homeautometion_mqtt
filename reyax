@@ -2,15 +2,15 @@
 #include <PubSubClient.h>
 
 // ---------- WiFi Credentials ----------
-const char* ssid = "Airtel_AirFiver_9794";
-const char* password = "Dkp123@x#";
+const char* ssid = "";
+const char* password = "";
 
 // ---------- Reyex MQTT Server ----------
-const char* mqtt_server = "mqtt.ryc1001.io";   // Reyex Cloud broker
+const char* mqtt_server = "iot.reyax.com";   // Reyex Cloud broker
 const int mqtt_port = 1883;                    // Use 8883 for SSL (if enabled)
-const char* mqtt_user = "YOUR_DEVICE_ID";      // Reyex Device ID / Username
-const char* mqtt_pass = "YOUR_DEVICE_KEY";     // Reyex Device Key / Password
-const char* network_id = "YOUR_NETWORK_ID";    // Reyex Network ID
+const char* mqtt_user = "";      // Reyex Device ID / Username
+const char* mqtt_pass = "";     // Reyex Device Key / Password
+const char* network_id = "";    // Reyex Network ID
 
 // ---------- Pin Definitions ----------
 #define LED LED_BUILTIN
@@ -130,7 +130,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection... ");
 
-    if (client.connect("ESP8266_4CH_RELAY", mqtt_user, mqtt_pass)) {
+    if (client.connect("VFB0olYdSi9awPc6ApONn4X4R7s5nsfBvmQr", mqtt_user, mqtt_pass)) {
       Serial.println("connected ✅");
       // Subscribe to command topics
       client.subscribe(TOPIC_RELAY1.c_str());
